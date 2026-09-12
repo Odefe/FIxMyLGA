@@ -29,7 +29,7 @@
         {href: "issue-isaac-john-waste.html", id: "isaac-john", title: "Dirt by the side of the Road in Isaac John Street, Somolu.", category: "Waste & Sanitation", state: "Lagos", lga: "Shomolu", image: "isaac-john-waste.jpg"},
         {href: "issue-garki-bridge.html", id: "garki", title: "The bridge by Garki Hospital requires urgent attention", category: "Roads", state: "Federal Capital Territory", lga: "Abuja Municipal", image: "garki-bridge.jpg"},
         {href: "issue-gogon-gada-road.html", id: "gogon-gada", title: "Muddy, waterlogged road in Gogon Gada Village", category: "Roads", state: "Federal Capital Territory", lga: "Abuja Municipal", image: "gogon-gada-road.jpg"},
-        {id: "eti-osa-flood", title: "Flooding in Eti-Osa", category: "Other", state: "Lagos", lga: "Eti-Osa", href: "lga-eti-osa.html"}
+        {id: "eti-osa-flood", title: "Flooding in Eti-Osa", category: "Other", state: "Lagos", lga: "Eti-Osa", href: "issue-eti-osa-flood.html"}
     ];
     const node = (tag, value, className) => {
         const element = document.createElement(tag);
@@ -37,32 +37,6 @@
         if (className) element.className = className;
         return element;
     };
-    const openRecord = (record) => {
-        const box = window.FixMyLGA.dialog({title: record.title, copy: `${record.lga} LGA · ${record.state} · ${record.category}. Public issue status: Unresolved.`});
-        if (record.image) {
-            const image = node("img", undefined, "record-dialog-image");
-            image.src = `assets/${record.image}`;
-            image.alt = record.title;
-            box.insertBefore(image, box.querySelector(".action-feedback"));
-        }
-        const verify = node("button", "Verify this issue", "button");
-        verify.type = "button";
-        verify.dataset.verifyIssue = record.id;
-        verify.dataset.issueTitle = record.title;
-        box.querySelector(".dialog-actions").prepend(verify);
-        window.FixMyLGA.renderActions();
-    };
-    // Complete the public cards on the home and related-issue pages.
-    document.querySelectorAll("article.issue-card").forEach((card) => {
-        const source = card.querySelector("img")?.getAttribute("src");
-        const record = records.find((item) => source === `assets/${item.image}`);
-        if (!record) return;
-        const button = node("button", "View issue →", "text-button card-open-button");
-        button.type = "button";
-        button.setAttribute("aria-label", `View issue: ${record.title}`);
-        button.addEventListener("click", () => openRecord(record));
-        card.append(button);
-    });
     const stateSelect = document.querySelector("[data-demo-state]");
     const initialResults = document.querySelector("[data-initial-results]");
     const lgaResults = document.querySelector("[data-lga-results]");
@@ -88,7 +62,7 @@
             } else {
                 const grid = node("div", undefined, "issue-grid issue-grid-page");
                 matches.forEach((record) => {
-                    const card = node(record.href ? "a" : "article", undefined, "issue-card" + (record.href ? " issue-card-link" : ""));
+                    const card = node("a", undefined, "issue-card issue-card-link");
                     if (record.href) card.href = record.href;
                     const top = node("div", undefined, "issue-card-top");
                     top.append(node("span", record.category, "category-badge"));
@@ -103,7 +77,6 @@
                     footer.append(node("span", "Unresolved", "status"), node("span", "0 / 20"));
                     card.append(footer);
                     const action = node(record.href ? "span" : "button", "View issue →", "text-button card-open-button");
-                    if (!record.href) { action.type = "button"; action.setAttribute("aria-label", `View issue: ${record.title}`); action.addEventListener("click", () => openRecord(record)); }
                     card.append(action); grid.append(card);
                 });
                 initialResults.append(grid);
