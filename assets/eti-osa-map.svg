@@ -1,0 +1,290 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 900 520"
+                        class="lga-map-svg"
+                        role="img"
+                        aria-labelledby="lga-map-title"
+                    ><style>.lga-map-neighbor,.lga-map-selected{fill-rule:evenodd;stroke-linejoin:round;vector-effect:non-scaling-stroke}.lga-map-neighbor{fill:#e7f0ea;stroke:#abc1b6;stroke-width:1}.lga-map-selected{fill:#087a45;stroke:#052e22;stroke-width:2}.lga-map-issue-marker{fill:#f5b700;stroke:#fff;stroke-width:3;vector-effect:non-scaling-stroke}.lga-map-label{fill:#31433a;paint-order:stroke;stroke:rgba(255,255,255,.88);stroke-linejoin:round;stroke-width:4px;font:800 13px Arial;text-anchor:middle;dominant-baseline:central}.lga-map-label-selected{fill:#fff;stroke:rgba(5,46,34,.7);stroke-width:5px;font-size:15px;font-weight:900}.lga-map-active-count-background{fill:#f5b700;stroke:#fff;stroke-width:2;vector-effect:non-scaling-stroke}.lga-map-active-count{fill:#052e22;font:900 11px Arial;text-anchor:middle;dominant-baseline:central;pointer-events:none}</style>
+                        <title id="lga-map-title">
+                            Eti-Osa LGA in Lagos
+                        </title>
+
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 612.86 183.47 L 411.38 181.73 L 402.28 203.56 L 409.66 210.81 L 413.79 221.62 L 395.13 240.31 L 385.84 244.74 L 381.82 249.75 L 373.03 269.87 L 374.74 277.65 L 370.23 279.9 L 370.3 282.24 L 381.58 286.08 L 387.01 280.28 L 392.78 279.91 L 472.28 246.6 L 492.06 243.67 L 500.1 246.86 L 531.9 273.62 L 545.15 275.97 L 545.03 310.9 L 564.29 314.09 L 564.29 280.34 L 567.66 280.36 L 570.18 281.15 L 574.75 289.97 L 591.62 296.57 L 602.81 309.71 L 610.75 308.47 L 625.6 314.56 L 640.28 310.02 L 650.88 316.66 L 666.32 314.87 L 671.17 317.04 L 676.4 324.7 L 689.86 336.16 L 746.33 341.95 L 746.33 312.83 L 739.31 306.71 L 722.19 306.74 L 717.89 309.24 L 701.54 304.63 L 696.67 305.78 L 696.12 309.38 L 692.0 309.31 L 687.69 307.4 L 687.07 304.02 L 682.0 303.57 L 677.62 294.6 L 665.48 294.53 L 648.67 288.6 L 646.14 276.21 L 680.16 256.17 L 683.49 245.94 L 674.76 233.52 L 668.49 230.06 L 661.89 231.92 L 649.27 228.15 L 643.47 233.75 L 625.68 242.95 L 622.7 245.59 L 622.12 250.66 L 614.37 251.46 L 611.38 243.35 L 608.46 245.13 L 599.2 243.48 L 599.17 234.13 L 591.76 214.27 L 594.9 211.42 L 596.04 205.62 L 602.02 207.04 L 607.73 204.76 L 612.86 197.07 L 614.79 197.61 L 612.86 183.47 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Epe</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 545.03 310.9 L 545.15 275.97 L 531.9 273.62 L 500.1 246.86 L 487.85 243.16 L 472.28 246.6 L 392.78 279.91 L 395.74 281.75 L 397.52 288.12 L 375.79 315.43 L 429.26 312.77 L 468.17 307.53 L 517.75 308.09 L 545.03 310.9 Z M 689.86 336.16 L 676.4 324.7 L 671.17 317.04 L 666.32 314.87 L 650.88 316.66 L 640.28 310.02 L 625.6 314.56 L 610.75 308.47 L 602.81 309.71 L 591.62 296.57 L 574.75 289.97 L 570.18 281.15 L 564.29 280.34 L 564.29 314.09 L 689.86 336.16 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Ibeju/Lekki</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 411.38 181.73 L 352.74 181.69 L 325.49 177.94 L 287.43 179.19 L 291.99 183.3 L 290.25 188.64 L 285.65 188.94 L 283.27 185.19 L 278.73 188.03 L 286.69 203.83 L 274.86 203.99 L 275.19 213.55 L 290.72 231.6 L 293.51 229.68 L 292.8 226.81 L 296.79 225.57 L 298.85 228.66 L 293.25 240.1 L 291.89 249.51 L 300.44 257.19 L 322.02 263.05 L 332.48 258.43 L 341.05 259.48 L 354.97 245.39 L 372.27 246.56 L 376.63 249.75 L 381.82 249.75 L 410.77 225.65 L 413.79 221.62 L 411.58 214.71 L 402.28 203.56 L 411.38 181.73 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Ikorodu</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 274.86 203.99 L 241.64 202.93 L 239.35 208.41 L 239.42 215.13 L 248.24 227.31 L 240.28 240.81 L 240.74 246.17 L 248.88 251.41 L 255.79 250.26 L 261.58 262.06 L 265.58 257.27 L 262.92 244.88 L 267.37 244.49 L 273.58 247.98 L 276.65 246.31 L 283.3 233.96 L 290.72 231.6 L 286.63 224.51 L 277.58 218.56 L 274.86 203.99 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Kosofe</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 260.26 293.86 L 250.45 292.64 L 244.17 297.87 L 256.95 309.35 L 261.75 300.48 L 260.26 293.86 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Lagos Island</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 259.83 263.62 L 240.76 263.56 L 242.26 277.69 L 238.73 281.81 L 238.69 291.89 L 245.23 291.93 L 247.32 294.52 L 253.94 291.95 L 255.55 279.69 L 262.16 273.29 L 259.83 263.62 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Lagos Mainland</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 214.02 296.67 L 220.11 286.99 L 217.55 275.06 L 213.36 281.86 L 201.01 285.1 L 200.87 277.82 L 197.56 282.49 L 175.96 287.61 L 173.97 297.66 L 168.08 296.62 L 170.04 298.09 L 168.7 305.44 L 162.71 305.58 L 164.76 308.33 L 154.4 310.74 L 155.19 326.65 L 212.22 326.99 L 260.29 332.1 L 256.0 323.61 L 258.51 312.93 L 256.95 309.35 L 247.52 312.2 L 247.21 317.75 L 245.04 313.87 L 246.28 309.95 L 242.62 313.91 L 223.98 312.41 L 221.68 309.48 L 225.53 308.32 L 217.49 305.82 L 214.02 296.67 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Amuwo-Odofin</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 240.74 246.17 L 240.76 263.56 L 261.58 262.06 L 255.79 250.26 L 248.88 251.41 L 240.74 246.17 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Shomolu</title>
+                                </path>
+                            </g>
+                        
+                            <g class="lga-map-link">
+                                <path
+                                    d="M 239.03 287.97 L 231.86 286.58 L 227.01 288.5 L 234.84 294.87 L 234.88 299.5 L 232.52 300.27 L 231.17 308.83 L 223.25 308.54 L 222.2 311.57 L 242.62 313.91 L 246.28 309.95 L 245.04 313.87 L 247.21 317.75 L 247.52 312.2 L 256.95 309.35 L 245.12 300.17 L 244.17 297.87 L 247.32 294.52 L 245.23 291.93 L 238.69 291.89 L 239.03 287.97 Z"
+                                    class="lga-map-neighbor"
+                                >
+                                    <title>Apapa</title>
+                                </path>
+                            </g>
+                        
+
+                        
+                            <path
+                                d="M 375.09 266.37 L 354.51 262.09 L 344.69 269.01 L 345.62 279.98 L 338.95 287.49 L 308.62 295.19 L 280.21 291.26 L 260.26 293.86 L 261.75 300.48 L 256.95 309.35 L 258.51 312.93 L 256.0 323.61 L 258.22 326.7 L 259.73 320.81 L 266.85 317.44 L 375.79 315.43 L 397.52 288.12 L 395.74 281.75 L 392.78 279.91 L 384.56 281.54 L 380.38 286.29 L 370.3 282.24 L 370.23 279.9 L 374.74 277.65 L 373.03 269.87 L 375.09 266.37 Z"
+                                class="lga-map-selected"
+                            />
+                        
+
+                        
+                            
+                                <text
+                                    x="351.16"
+                                    y="294.57"
+                                    class="lga-map-label lga-map-label-selected"
+                                >
+                                    Eti-Osa
+                                </text>
+
+                                
+                                    <g
+                                        aria-label="1 active issue in Eti-Osa LGA"
+                                    >
+                                        <circle
+                                            cx="351.16"
+                                            cy="313.57"
+                                            r="11"
+                                            class="lga-map-active-count-background"
+                                        />
+                                        <text
+                                            x="351.16"
+                                            y="313.57"
+                                            class="lga-map-active-count"
+                                        >
+                                            1
+                                        </text>
+                                    </g>
+                                
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="595.7"
+                                        y="261.7"
+                                        class="lga-map-label"
+                                    >
+                                        Epe
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="471.08"
+                                        y="278.1"
+                                        class="lga-map-label"
+                                    >
+                                        Ibeju/Lekki
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="347.48"
+                                        y="220.98"
+                                        class="lga-map-label"
+                                    >
+                                        Ikorodu
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="265.95"
+                                        y="232.29"
+                                        class="lga-map-label"
+                                    >
+                                        Kosofe
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="253.83"
+                                        y="301.11"
+                                        class="lga-map-label"
+                                    >
+                                        Lagos Island
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="249.66"
+                                        y="278.16"
+                                        class="lga-map-label"
+                                    >
+                                        Lagos Mainland
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="192.58"
+                                        y="303.34"
+                                        class="lga-map-label"
+                                    >
+                                        Amuwo-Odofin
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="248.74"
+                                        y="254.08"
+                                        class="lga-map-label"
+                                    >
+                                        Shomolu
+                                    </text>
+
+                                    
+                                        <g
+                                            aria-label="1 active issue in Shomolu LGA"
+                                        >
+                                            <circle
+                                                cx="248.74"
+                                                cy="273.08000000000004"
+                                                r="11"
+                                                class="lga-map-active-count-background"
+                                            />
+                                            <text
+                                                x="248.74"
+                                                y="273.08000000000004"
+                                                class="lga-map-active-count"
+                                            >
+                                                1
+                                            </text>
+                                        </g>
+                                    
+                                </g>
+                            
+                        
+                            
+                                <g class="lga-map-link">
+                                    <text
+                                        x="239.95"
+                                        y="302.14"
+                                        class="lga-map-label"
+                                    >
+                                        Apapa
+                                    </text>
+
+                                    
+                                </g>
+                            
+                        
+
+                        
+                            <circle
+                                cx="322.44"
+                                cy="305.79"
+                                r="7"
+                                class="lga-map-issue-marker"
+                            >
+                                <title>
+                                    Flood
+                                    &#183; 0 verifications
+                                </title>
+                            </circle>
+                        
+                    </svg>

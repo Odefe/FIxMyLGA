@@ -1,2 +1,9 @@
-# FIxMyLGA
-FixMyLGA is an open-source civic reporting platform for documenting and tracking local infrastructure issues across Nigerian LGAs. The project explores location-based reporting, community verification, moderation, evidence handling, issue-resolution tracking, notifications, and LGA-level progress data.
+# FixMyLGA
+
+An interactive civic technology portfolio by Emmanuel Oberabor.
+
+Visit my portfolio: https://emmanueloberabor.com
+
+This demonstration runs in the browser. No reports or files are uploaded or stored.
+
+To publish: Settings > Pages > Deploy from a branch > main > /(root).
