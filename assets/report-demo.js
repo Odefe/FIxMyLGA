@@ -17,6 +17,8 @@
     const categoryButtons = Array.from(document.querySelectorAll("[data-category]"));
     const evidenceSlots = Array.from(document.querySelectorAll("[data-evidence-slot]"));
     let selectedCategory = "";
+    let reviewedReport = null;
+    let savedReportId = null;
     const evidence = {photo1: null, photo2: null, video: null};
 
     Object.keys(stateData).forEach((stateName) => {
@@ -145,14 +147,18 @@
     descriptionInput.addEventListener("input", () => { descriptionInput.removeAttribute("aria-invalid"); updateCounts(); });
 
     const loadSample = () => {
+        form.hidden = false;
+        reviewedReport = null;
+        savedReportId = null;
         setCategory("Flooding & Drainage");
         stateSelect.value = "Federal Capital Territory";
         populateLgas("Abuja Municipal");
         titleInput.value = "Blocked drainage causing waterlogging beside Jabi Lake Mall";
         descriptionInput.value = "Rainwater is collecting across the access road because the roadside drain is blocked. Vehicles are slowing and pedestrians have to step into traffic.";
-        setEvidence("photo1", {source: "assets/jabi-drainage-1.jpg", name: "Sample photo 1 · preserved public evidence", objectUrl: false});
-        setEvidence("photo2", {source: "assets/jabi-drainage-2.jpg", name: "Sample photo 2 · preserved public evidence", objectUrl: false});
-        setEvidence("video", {source: "assets/fixmylga-portfolio-walkthrough.webm", name: "Sample demonstration video", objectUrl: false});
+        evidenceSlots.forEach((slot) => { slot.querySelector("input[type='file']").value = ""; });
+        setEvidence("photo1", {source: "assets/jabi-drainage-1.jpg", name: "Example image · public drainage report", objectUrl: false});
+        setEvidence("photo2", {source: "assets/jabi-drainage-1.jpg", name: "Example image repeated", objectUrl: false});
+        setEvidence("video", null);
         updateCounts();
         errorSummary.hidden = true;
         reviewPanel.hidden = true;
@@ -178,20 +184,23 @@
     };
 
     const buildReview = () => {
+        reviewedReport = {title: titleInput.value.trim(), description: descriptionInput.value.trim(), category: selectedCategory, state: stateSelect.value, lga: lgaSelect.value};
         document.querySelector("[data-review-category]").textContent = selectedCategory;
         document.querySelector("[data-review-location]").textContent = `${lgaSelect.value} LGA · ${stateSelect.value}`;
         document.querySelector("[data-review-title]").textContent = titleInput.value.trim();
         document.querySelector("[data-review-description]").textContent = descriptionInput.value.trim();
-        document.querySelector("[data-review-evidence]").textContent = "2 photos and 1 video ready for moderation";
+        document.querySelector("[data-review-evidence]").textContent = evidence.video ? "2 photos and 1 video · preview only" : "2 photos · preview only";
         const previews = document.querySelector("[data-review-previews]");
         previews.replaceChildren();
         Object.entries(evidence).forEach(([key, item]) => {
+            if (!item) return;
             const media = document.createElement(key === "video" ? "video" : "img");
             media.src = item.source;
             if (key === "video") {
                 media.muted = true;
                 media.playsInline = true;
                 media.preload = "metadata";
+                media.controls = true;
                 media.setAttribute("aria-label", item.name);
             } else {
                 media.alt = item.name;
@@ -199,6 +208,7 @@
             previews.append(media);
         });
         reviewPanel.hidden = false;
+        form.hidden = true;
         completePanel.hidden = true;
         reviewPanel.scrollIntoView({behavior: "smooth", block: "start"});
     };
@@ -211,7 +221,6 @@
         if (!lgaSelect.value) { lgaSelect.setAttribute("aria-invalid", "true"); errors.push({message: "Select a Local Government Area.", target: lgaSelect}); }
         if (!evidence.photo1) errors.push({message: "Add the first photo.", target: document.querySelector("[data-evidence-slot='photo1'] .evidence-choose")});
         if (!evidence.photo2) errors.push({message: "Add the second photo.", target: document.querySelector("[data-evidence-slot='photo2'] .evidence-choose")});
-        if (!evidence.video) errors.push({message: "Add a video.", target: document.querySelector("[data-evidence-slot='video'] .evidence-choose")});
         if (!titleInput.value.trim()) { titleInput.setAttribute("aria-invalid", "true"); errors.push({message: "Add a clear report title.", target: titleInput}); }
         if (!descriptionInput.value.trim()) { descriptionInput.setAttribute("aria-invalid", "true"); errors.push({message: "Describe the physical issue.", target: descriptionInput}); }
         if (errors.length) { renderErrors(errors); return; }
@@ -220,6 +229,9 @@
     });
 
     const clearReport = (focus = true) => {
+        form.hidden = false;
+        reviewedReport = null;
+        savedReportId = null;
         Object.keys(evidence).forEach((key) => setEvidence(key, null));
         form.reset();
         setCategory("");
@@ -232,18 +244,37 @@
     };
     document.getElementById("clear-report").addEventListener("click", () => clearReport());
     document.getElementById("edit-report").addEventListener("click", () => {
+        form.hidden = false;
         reviewPanel.hidden = true;
         document.getElementById("category-step").scrollIntoView({behavior: "smooth", block: "start"});
         categoryButtons.find((button) => button.dataset.category === selectedCategory)?.focus();
     });
     document.getElementById("complete-report-demo").addEventListener("click", () => {
+        if (!reviewedReport || savedReportId) return;
+        try {
+            savedReportId = window.FixMyLGA.saveReport(reviewedReport);
+        } catch (error) {
+            let message = reviewPanel.querySelector("[data-save-error]");
+            if (!message) { message = document.createElement("p"); message.dataset.saveError = ""; message.setAttribute("role", "alert"); reviewPanel.append(message); }
+            message.textContent = error.message;
+            return;
+        }
         reviewPanel.hidden = true;
         completePanel.hidden = false;
+        document.querySelector("[data-report-complete-copy]").textContent = `Your report text has been added to your profile. ${window.FixMyLGA.localNote()} No report was sent to authorities or the live service, and no files were uploaded.`;
         completePanel.focus();
         completePanel.scrollIntoView({behavior: "smooth", block: "center"});
     });
     document.getElementById("start-again").addEventListener("click", () => clearReport());
     window.addEventListener("beforeunload", () => Object.values(evidence).forEach(revokeEvidenceUrl));
 
+    const params = new URLSearchParams(location.search);
+    const requestedState = params.get("state");
+    const home = window.FixMyLGA.getState().profile;
+    const initialState = Object.hasOwn(stateData, requestedState) ? requestedState : home.state;
+    if (Object.hasOwn(stateData, initialState)) {
+        stateSelect.value = initialState;
+        populateLgas(requestedState ? params.get("lga") : home.lga);
+    }
     updateCounts();
 })();
