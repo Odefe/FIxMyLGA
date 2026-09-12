@@ -109,6 +109,10 @@
                     card.href = "issue-jabi.html";
                     card.className = "lga-card lga-card-active";
                     card.setAttribute("aria-label", "Open a preserved Abuja Municipal issue record");
+                } else if (stateName === "Lagos" && ["Alimosho", "Shomolu"].includes(lgaName)) {
+                    card = document.createElement("a");
+                    card.href = lgaName === "Alimosho" ? "issue-oluwaga-bus-stop.html" : "issue-isaac-john-waste.html";
+                    card.className = "lga-card lga-card-active";
                 } else {
                     card = document.createElement("article");
                     card.className = "lga-card lga-card-static";
